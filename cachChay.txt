@@ -1,0 +1,14 @@
+Cần mở 2 terminal riêng biệt
+node server.js
+Terminal 2 — mở terminal MỚI, chỉ chạy ngrok:
+ngrok http 3000
+Chạy local trên máy: Mở cmd
+curl localhost:3000/users
+
+
+
+
+yêu cầu cần có node.js và tài khoản ngrok là chạy được!!!
+cần có tài khoản MySQL rồi đăng nhập mật khẩu của root của bạn trong file server.js, và file env
+Sản phẩm đầu tay có backend node.js và database MySQL workbend
+

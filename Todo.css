@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0f0ff 0%, #f0e6ff 50%, #fde8f0 100%);
+}
+
+.ThanhNhap {
+  width: 100%;
+  height: 100px;
+  position: sticky;
+  background: linear-gradient(135deg, #e0f0ff 0%, #f0e6ff 50%, #fde8f0 100%);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+.ThanhNhap input {
+  width: 500px;
+  height: 30px;
+  border-radius: 12px;
+}
+.ThanhNhap button {
+  width: 60px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: aqua;
+}
+.ThanhNhap button:hover {
+  background-color: blue;
+}
+
+.Bang {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #4f6ef7, #9b5de5);
+  justify-content: center;
+  align-items: center;
+}
+.BangHienThi {
+  border-collapse: collapse;
+  border-radius: 12px;
+}
+.BangHienThi th,
+.BangHienThi td {
+  border: 1px solid rgb(12, 7, 7); /* Tạo đường kẻ cho từng ô */
+  padding: 10px; /* Tạo khoảng cách chữ với đường kẻ */
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #11c48a, #4f6ef7);
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 10px;
+}
+.contact a:hover {
+  color: blueviolet;
+}
+
+.contact h4 {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.HinhTron {
+  border-radius: 50%;
+  background-color: blueviolet;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+.HinhTron:hover {
+  background-color: brown;
+}
+
+.tacVu img {
+  width: 10px;
+  height: 10px;
+}
+
+.dangNhap {
+  display: flex;
+  margin: 0;
+  gap: 5px;
+  position: relative;
+}
+
+.dangNhap a:hover {
+  color: blueviolet;
+}
+.dangNhap p {
+  margin: 0;
+}

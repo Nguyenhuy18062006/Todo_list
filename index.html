@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Todo.css" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="ThanhNhap">
+      <input
+        id="inputViec"
+        type="text"
+        placeholder="Nhập việc bạn cần làm..."
+      />
+      <button onclick="xacNhan()">Xác Nhận</button>
+    </div>
+    <div class="Bang">
+      <table
+        class="BangHienThi"
+        style="border: 1px; border-color: rgb(12, 7, 7); border-radius: 12px"
+      >
+        <tr>
+          <th>Việc bạn cần làm (To-do list)</th>
+          <th>Xong</th>
+          <th>Danh Sách Việc Đã Làm Xong</th>
+          <th>Phục Hồi</th>
+          <th>Xóa việc</th>
+        </tr>
+      </table>
+    </div>
+    <div class="footer">
+      <div class="contact">
+        <h4>Liên hệ:</h4>
+        <a href="mailto:huyn65830@gmail.com">📧 huyn65830@gmail.com</a>
+        <a href="tel:0344464495">📞 0344464495</a>
+      </div>
+
+      <div class="dangNhap">
+        <a href="./index.html">Trang chủ</a>
+        <p>/</p>
+        <a href="./loginToDo.html">Đăng nhập</a>
+        <p>/</p>
+        <a href="./signUpToDo.html">Đăng ký</a>
+      </div>
+
+      <div class="tacVu">
+        <div class="HinhTron">
+          <a href="#top">
+            <img
+              src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/arrow-up-icon.png"
+              alt="Up"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <script src="./Todo.js"></script>
+  </body>
+</html>

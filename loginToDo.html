@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Todo.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Đăng Nhập</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        min-height: 100vh;
+        background: linear-gradient(
+          135deg,
+          #e0f0ff 0%,
+          #f0e6ff 50%,
+          #fde8f0 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 60px;
+      }
+
+      .card {
+        width: 420px;
+        background: white;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(80, 80, 200, 0.15);
+        overflow: hidden;
+        animation: slideUp 0.5s ease;
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .card-header {
+        background: linear-gradient(135deg, #4f6ef7, #9b5de5);
+        padding: 32px 36px 28px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .card-header .icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+      }
+
+      .card-header h2 {
+        font-size: 22px;
+        font-weight: 800;
+      }
+      .card-header p {
+        font-size: 13px;
+        opacity: 0.85;
+        margin-top: 2px;
+      }
+
+      .card-body {
+        padding: 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        color: #555;
+        margin-bottom: 7px;
+        letter-spacing: 0.3px;
+      }
+
+      .field input {
+        width: 100%;
+        height: 44px;
+        border: 2px solid #e8e8f0;
+        border-radius: 12px;
+        padding: 0 14px;
+        font-size: 14px;
+        font-family: "Nunito", sans-serif;
+        color: #333;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+        outline: none;
+      }
+
+      .field input:focus {
+        border-color: #4f6ef7;
+        box-shadow: 0 0 0 4px rgba(79, 110, 247, 0.1);
+      }
+
+      .error-msg {
+        color: #e53e3e;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+      }
+
+      .btn-login {
+        width: 100%;
+        height: 46px;
+        background: linear-gradient(135deg, #4f6ef7, #9b5de5);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 700;
+        font-family: "Nunito", sans-serif;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+        margin-top: 6px;
+      }
+
+      .btn-login:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(79, 110, 247, 0.35);
+      }
+
+      .btn-login:active {
+        transform: translateY(0);
+      }
+
+      .divider {
+        text-align: center;
+        color: #aaa;
+        font-size: 13px;
+        position: relative;
+      }
+
+      .divider::before,
+      .divider::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 38%;
+        height: 1px;
+        background: #e8e8f0;
+      }
+      .divider::before {
+        left: 0;
+      }
+      .divider::after {
+        right: 0;
+      }
+
+      .link-row {
+        text-align: center;
+        font-size: 13.5px;
+        color: #666;
+      }
+
+      .link-row a {
+        color: #4f6ef7;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .link-row a:hover {
+        text-decoration: underline;
+      }
+
+      .success-banner {
+        background: #f0fff4;
+        border: 1px solid #9ae6b4;
+        color: #276749;
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        display: none;
+        align-items: center;
+        gap: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-header">
+        <div class="icon">🔐</div>
+        <div>
+          <h2>Đăng Nhập</h2>
+          <p>Chào mừng bạn quay lại!</p>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="success-banner" id="successBanner">
+          ✅ Đăng nhập thành công! Đang chuyển hướng...
+        </div>
+
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="inputEmail" placeholder="example@email.com" />
+          <div class="error-msg" id="errEmail">Vui lòng nhập email hợp lệ.</div>
+        </div>
+
+        <div class="field">
+          <label>Mật khẩu</label>
+          <input type="password" id="inputPass" placeholder="Nhập mật khẩu" />
+          <div class="error-msg" id="errPass">Vui lòng nhập mật khẩu.</div>
+        </div>
+
+        <div
+          class="error-msg"
+          id="errLogin"
+          style="display: none; font-size: 13px"
+        >
+          ❌ Email hoặc mật khẩu không đúng.
+        </div>
+        <div class="error-msg" id="errServer" style="display: none"></div>
+        <button class="btn-login" onclick="dangNhap()">
+          Xác Nhận Đăng Nhập
+        </button>
+
+        <div class="divider">hoặc</div>
+
+        <div class="link-row">
+          Chưa có tài khoản? <a href="./signUpToDo.html">Đăng ký ngay</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="contact">
+        <h4>Liên hệ:</h4>
+        <a href="mailto:huyn65830@gmail.com">📧 huyn65830@gmail.com</a>
+        <a href="tel:0344464495">📞 0344464495</a>
+      </div>
+      <div class="dangNhap">
+        <a href="./index.html">Trang chủ</a>
+        <p>/</p>
+        <a href="./loginToDo.html">Đăng nhập</a>
+        <p>/</p>
+        <a href="./signUpToDo.html">Đăng ký</a>
+      </div>
+      <div class="tacVu">
+        <div class="HinhTron">
+          <a href="#top">
+            <img
+              src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/arrow-up-icon.png"
+              alt="Up"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="./login.js"></script>
+  </body>
+</html>
